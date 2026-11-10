@@ -1,4 +1,4 @@
-"""YOLOv3 inference implemented from scratch with NumPy (+ Numba JIT)."""
+"""YOLOv3 inference implemented from scratch with NumPy and Numba JIT."""
 from .config import class_names, num_classes, size
 from .weights import load_weights
 from .model import YoloV3

@@ -1,7 +1,7 @@
-# YOLOv3 from scratch — NumPy only (no TensorFlow / PyTorch)
+# YOLOv3 from scratch (no TensorFlow / PyTorch)
 
-A from-scratch implementation of the **YOLOv3 forward pass (inference)** written with plain
-**NumPy**, accelerated with **Numba JIT**. No deep-learning framework is used by the model:
+A from-scratch implementation of the **YOLOv3 forward pass (inference)** written with
+**NumPy** and accelerated with **Numba JIT**. No deep-learning framework is used by the model:
 convolution, batch normalization, LeakyReLU, sigmoid, upsampling, box decoding and
 non-maximum suppression are all hand-written.
 
@@ -12,7 +12,7 @@ trained on the [Kaggle Face Mask Detection dataset](https://www.kaggle.com/datas
 [TranPhu1999/Yolo3-face-mask-detection-from-scratch](https://github.com/TranPhu1999/Yolo3-face-mask-detection-from-scratch);
 the algorithms were not rewritten.
 
-## What is (and isn't) NumPy-only — honest scope
+## Dependencies
 
 | Part | Dependency |
 |---|---|
@@ -43,8 +43,8 @@ Weights are streamed sequentially from the Darknet file while the forward pass r
 ## Install
 
 ```bash
-git clone https://github.com/TranPhu1999/Yolov3-from-scratch-no-AI-numpy-only.git
-cd Yolov3-from-scratch-no-AI-numpy-only
+git clone https://github.com/TranPhu1999/Yolov3-from-scratch-no-AI.git
+cd Yolov3-from-scratch-no-AI
 pip install -r requirements.txt
 ```
 
@@ -98,7 +98,7 @@ src/yolov3_numpy/
   detect.py       end-to-end detection on an image file
   backends/cuda_numba.py   experimental CUDA variant (self-contained)
 scripts/detect.py          CLI
-reference/yolov3_tensorflow.py   TensorFlow/Keras baseline (not NumPy-only)
+reference/yolov3_tensorflow.py   TensorFlow/Keras baseline (baseline only)
 notebooks/Report_vi.ipynb  original project report (Vietnamese) with diagrams and timings
 tests/test_sanity.py       layer/NMS/resize checks + full forward pass with random weights
 ```
@@ -108,7 +108,6 @@ Run tests: `pytest -q` (the full forward-pass test takes a few minutes on CPU).
 ## Credits
 
 Authors: Trần Đức Phú, Lê Hữu Phúc, Lê Kinh Luân (HCMUS, 2022; instructor: Trần Trung Kiên).
-The model layout closely mirrors the Keras implementation [zzh8829/yolov3-tf2](https://github.com/zzh8829/yolov3-tf2).
 References: [NMS](https://towardsdatascience.com/non-maxima-suppression-139f7e00f0b5),
 [bilinear interpolation](https://meghal-darji.medium.com/implementing-bilinear-interpolation-for-image-resizing-357cbb2c2722).
 
