@@ -1,0 +1,9 @@
+# Core math (the network itself)
+numpy>=1.20,<2.0
+numba>=0.55,<0.59   # @jit() relies on object-mode fallback, removed in 0.59
+# Image I/O and drawing only
+opencv-python-headless
+Pillow<10        # draw_outputs uses ImageDraw.textsize (removed in Pillow 10)
+seaborn          # color palette for drawing boxes
+# Tests
+pytest
